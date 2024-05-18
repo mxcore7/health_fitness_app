@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_fitness/view/soundscreen.dart';
 import 'package:iconly/iconly.dart';
 
 class homescreen extends StatefulWidget {
@@ -29,9 +30,19 @@ class _homescreenState extends State<homescreen> {
               label: ""
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.circle_notifications_outlined, size: 40,),
-              label: ""
+              icon: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => soundscreen()), // Assurez-vous que SoundScreen est correctement défini ailleurs dans votre code
+                  );
+                },
+                child: Icon(
+                  Icons.circle_notifications_outlined, size: 40,),
+              ),
+              label: "",
             ),
+
             BottomNavigationBarItem(
                 icon: Icon(IconlyBold.user_2,size: 40,),
                 label: ""
